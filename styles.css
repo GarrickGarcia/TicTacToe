@@ -56,4 +56,5 @@
     color: red;
     z-index: 2;
     display: none; /* initially hidden */
+    white-space: nowrap;
 }
