@@ -13,6 +13,7 @@
 
 /* Styling for the game board */
 #gameBoard {
+    position: relative;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -43,4 +44,16 @@
     display: block;
     margin: 20px auto; /* Top & Bottom margin: 20px, Left & Right margin: auto */
     /* Other styling for the button */
+}
+
+#gameResult {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    font-size: 3em;
+    font-weight: bold;
+    color: red;
+    z-index: 2;
+    display: none; /* initially hidden */
 }

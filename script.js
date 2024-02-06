@@ -91,12 +91,23 @@ const restartGame = () => {
         cell.textContent = '';
     });
 
+    // Add this block
+    const gameResultElement = document.getElementById('gameResult');
+    gameResultElement.style.display = 'none';
+
     announce('Player X\'s turn');
 };
 
 const announce = (message) => {
     const statusElement = document.getElementById('status');
     statusElement.textContent = message;
+
+    // Add this block
+    if (message === 'X Wins!' || message === 'O Wins!' || message === 'Draw!') {
+        const gameResultElement = document.getElementById('gameResult');
+        gameResultElement.textContent = message;
+        gameResultElement.style.display = 'block';
+    }
 };
 
 // Event listeners
