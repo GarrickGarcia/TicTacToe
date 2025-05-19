@@ -9,7 +9,10 @@ let isGameActive = true;
 // Game logic
 const handleCellClick = (clickedCellEvent) => {
     const clickedCell = clickedCellEvent.target;
-    const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
+    const clickedCellIndex = parseInt(
+        clickedCell.getAttribute('data-cell-index'),
+        10
+    );
 
     // Check if the cell has already been clicked, or the game is paused
     if (board[clickedCellIndex] !== '' || !isGameActive) {
