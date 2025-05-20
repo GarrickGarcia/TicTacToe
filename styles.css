@@ -35,8 +35,12 @@
 }
 
 /* Styling for the X and O */
-.x, .o {
-    color: #333;
+.x {
+    color: rgb(41, 128, 185); /* Blue for X (same as winner notification) */
+}
+
+.o {
+    color: rgb(192, 57, 43); /* Red for O (same as winner notification) */
 }
 
 /* Center the restart button */
