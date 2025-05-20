@@ -70,7 +70,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    animation: bounce 0.5s ease-in-out;
+    animation: bounce 0.5s ease-in-out, pulse 1.5s infinite alternate;
 }
 
 @keyframes fadeIn {
@@ -82,4 +82,9 @@
     0% { transform: scale(0.5); }
     70% { transform: scale(1.2); }
     100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    from { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+    to { box-shadow: 0 0 30px rgba(255, 255, 255, 0.7); }
 }
