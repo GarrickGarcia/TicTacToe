@@ -97,6 +97,7 @@ const restartGame = () => {
     // Add this block
     const gameResultElement = document.getElementById('gameResult');
     gameResultElement.style.display = 'none';
+    gameResultElement.style.backgroundColor = '';  // Reset the background color
 
     announce('Player X\'s turn');
 };
@@ -108,8 +109,18 @@ const announce = (message) => {
     // Add this block
     if (message === 'X Wins!' || message === 'O Wins!' || message === 'Draw!') {
         const gameResultElement = document.getElementById('gameResult');
-        gameResultElement.textContent = message;
-        gameResultElement.style.display = 'block';
+        const resultMessageElement = gameResultElement.querySelector('.result-message');
+        resultMessageElement.textContent = message;
+        gameResultElement.style.display = 'flex'; // Changed from 'block' to 'flex'
+        
+        // Add different colors based on the result
+        if (message === 'X Wins!') {
+            gameResultElement.style.backgroundColor = 'rgba(41, 128, 185, 0.7)'; // Blue for X
+        } else if (message === 'O Wins!') {
+            gameResultElement.style.backgroundColor = 'rgba(192, 57, 43, 0.7)'; // Red for O
+        } else {
+            gameResultElement.style.backgroundColor = 'rgba(39, 174, 96, 0.7)'; // Green for Draw
+        }
     }
 };
 
