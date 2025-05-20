@@ -22,6 +22,7 @@ const handleCellClick = (clickedCellEvent) => {
     // Update the board and the UI
     board[clickedCellIndex] = currentPlayer;
     clickedCell.textContent = currentPlayer;
+    clickedCell.classList.add(currentPlayer.toLowerCase()); // Add class 'x' or 'o'
 
     // Check for a winner
     if (checkForWinner()) {
@@ -92,6 +93,7 @@ const restartGame = () => {
     // Reset the UI for each cell
     document.querySelectorAll('.cell').forEach(cell => {
         cell.textContent = '';
+        cell.classList.remove('x', 'o');
     });
 
     // Add this block
